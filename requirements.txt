@@ -1,0 +1,6 @@
+PyPDF2
+requests
+reportlab
+rich
+black
+pylint
