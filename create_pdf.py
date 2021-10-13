@@ -9,6 +9,14 @@ from rich import print
 from PyPDF2 import PdfFileWriter, PdfFileReader
 
 
+# Create folders
+folders = ["photos", "pdfs"]
+for folder in folders:
+    try:
+        os.mkdir(folder)
+    except OSError as error:
+        print(error)
+
 # Below credit to code-maven, thank you!
 # https://code-maven.com/add-image-to-existing-pdf-file-in-python
 def add_image(name, id):
