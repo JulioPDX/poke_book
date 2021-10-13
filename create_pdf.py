@@ -9,6 +9,8 @@ from rich import print
 from PyPDF2 import PdfFileWriter, PdfFileReader
 
 
+# Below credit to code-maven, thank you!
+# https://code-maven.com/add-image-to-existing-pdf-file-in-python
 def add_image(name, id):
     """Function to add image to PDF"""
     in_pdf_file = f"./pdfs/{id}_{name}.pdf"
@@ -102,7 +104,10 @@ pdf2merge = []
 for filename in os.listdir("."):
     if filename.endswith(".pdf"):
         pdf2merge.append(filename)
+
+# Required to sort all pokemon by ID
 pdf2merge.sort(key=lambda f: int(re.sub("\D", "", f)))
+
 pdfWriter = PdfFileWriter()
 
 # loop through all PDFs
